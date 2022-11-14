@@ -35,6 +35,14 @@ int timer9_flag = 0;
 
 int timer10_counter = 0;
 int timer10_flag = 0;
+
+int timer0_counter = 0;
+int timer0_flag = 0;
+
+void setTimer0(int duration){
+	timer0_counter = duration/TIME_CYCLE;
+	timer0_flag = 0;
+}
 void setTimer10(int duration){
 	timer10_counter = duration/TIME_CYCLE;
 	timer10_flag = 0;
@@ -149,6 +157,13 @@ void timerRun(){
 			timer8_counter--;
 			if(timer8_counter == 0){
 				timer8_flag = 1;
+			}
+		}
+
+	if(timer0_counter > 0){
+			timer0_counter--;
+			if(timer0_counter == 0){
+				timer0_flag = 1;
 			}
 		}
 }

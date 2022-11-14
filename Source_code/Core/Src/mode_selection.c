@@ -16,36 +16,7 @@ void mode_1(){
 	fsm_automatic_run_1();
 }
 
-void mode_2(){
-	if(timer4_flag >= 1){
-//			HAL_GPIO_WritePin(GPIOx, GPIO_Pin, PinState)
-		setTimer4(1000);
-		counter--;
-		bufferValue(counter);
-	}
-}
-void mode_3(int counter){
-	if(timer1_flag >= 1){
-		setTimer1(500);
-		HAL_GPIO_TogglePin(AMBER1, Pin_AMBER1) ;
-		HAL_GPIO_TogglePin(AMBER2, Pin_AMBER2) ;
-	}
-	if(timer3_flag){
-		setTimer3(1000) ;
-		counter--;
-	}
-}
-void mode_4(int counter){
-	if(timer3_flag){
-		setTimer3(1000) ;
-		counter--;
-	}
-	if(timer1_flag >= 1){
-		setTimer1(500);
-		HAL_GPIO_TogglePin(GREEN1, Pin_GREEN1) ;
-		HAL_GPIO_TogglePin(GREEN2, Pin_GREEN2) ;
-	}
-}
+
 void selection(){
 	switch (status) {
 		case 0:

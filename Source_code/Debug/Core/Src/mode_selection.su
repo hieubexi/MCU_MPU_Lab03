@@ -1,5 +1,2 @@
 mode_selection.c:14:6:mode_1	8	static
-mode_selection.c:19:6:mode_2	8	static
-mode_selection.c:27:6:mode_3	16	static
-mode_selection.c:38:6:mode_4	16	static
-mode_selection.c:49:6:selection	8	static
+mode_selection.c:20:6:selection	8	static

@@ -17,6 +17,7 @@ extern int timer7_flag;
 extern int timer8_flag;
 extern int timer9_flag;
 extern int timer10_flag;
+extern int timer0_flag;
 void setTimer1(int duration);
 void setTimer2(int duration);
 void setTimer3(int duration);
@@ -27,6 +28,7 @@ void setTimer7(int duration);
 void setTimer8(int duration);
 void setTimer9(int duration);
 void setTimer10(int duration);
+void setTimer0(int duration);
 void timerRun();
 
 
