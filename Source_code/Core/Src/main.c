@@ -25,7 +25,8 @@
 #include "software_timer.h"
 #include "button.h"
 #include "display7SEG.h"
-
+#include "update_value.h"
+#include "mode_selection.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -98,24 +99,56 @@ int main(void)
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
  setTimer1(1000);
+ setTimer2(500);
  HAL_GPIO_WritePin(EN0_GPIO_Port, EN0_Pin, RESET) ;
  HAL_GPIO_WritePin(EN1_GPIO_Port, EN1_Pin, RESET) ;
  HAL_GPIO_WritePin(EN2_GPIO_Port, EN2_Pin, RESET) ;
  HAL_GPIO_WritePin(EN3_GPIO_Port, EN3_Pin, RESET) ;
+// int value = 10 ;
+// int index = 0 ;
+ //int status = 0 ;
   while (1)
   {
     /* USER CODE END WHILE */
 
-	  if(timer1_flag >= 1){
-		  setTimer1(1000);
+/*	  if(is_button_Pressed(0)){
+//		  setTimer1(1000);
 		  HAL_GPIO_TogglePin(LED_RED_GPIO_Port, LED_RED_Pin);
 //		  num1++;
 //		  num2--;
 //		  if(num1 > 9) num1 = 0 ;
 //		  if(num2 < 0 ) num2 = 9 ;
 	  }
+	  if(is_button_Pressed(1)){
+		  value++;
+		  if(value > 99) value = 0;
+
+	  }else{
+		  if(timer2_flag >= 1){
+			  setTimer2(300);
+			  bufferValue(value);
+			  HAL_GPIO_TogglePin(LED_RED_GPIO_Port, LED_RED_Pin);
+			  if(index > 1) index = 0 ;
+			  update_value(index++) ;
+	//	  	  display7SEG_0(value);
+	//		  display7SEG_1(value);
+		  }
+	  }
+	  if(is_button_Pressed(2)){
+
+	  }
+
+
+
+//	  	  bufferValue();
+//		  update_value(0);
+
+
 //	  display7SEG_0(num1);
 //	  display7SEG_1(num2);
+*/
+   selection();
+	//  display_mode(index);
     /* USER CODE BEGIN 3 */
   }
   /* USER CODE END 3 */
@@ -267,6 +300,7 @@ static void MX_GPIO_Init(void)
 /* USER CODE BEGIN 4 */
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef * htim){
 	timerRun();
+	getKeyInput();
 }
 /* USER CODE END 4 */
 

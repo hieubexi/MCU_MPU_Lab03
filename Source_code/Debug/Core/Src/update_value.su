@@ -1,0 +1,6 @@
+update_value.c:13:6:bufferValue	16	static
+update_value.c:22:6:bufferMode	16	static
+update_value.c:26:6:update_value	16	static
+update_value.c:42:6:update_mode	16	static
+update_value.c:66:6:display_counter	8	static
+update_value.c:74:6:display_mode	8	static
